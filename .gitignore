@@ -1,0 +1,6 @@
+.env
+main_open_ai.py
+modelos.py
+teste.py
+venv/
+__pycache__

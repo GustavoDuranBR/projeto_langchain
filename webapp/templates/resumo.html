@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Caminho da Fé - Resumo</title>
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/resumo">Resumo</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <!-- Adicione mais links conforme necessário -->
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Caminho da Fé - Resumo</h1>
+        </div>
+
+        <div class="footer">
+            <form method="POST" action="/resumo">
+                <label for="assunto">Leitura:</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Digite o tema para resumo..." required>
+                
+                <label for="traducoes">Escolha a Tradução:</label>
+                <select id="traducoes" name="traducoes" required>
+                    <option value=" "> </option>
+                    <option value="naa">Nova Almeida Atualizada</option>
+                    <option value="nvi">Nova Versão Internacional</option>
+                    <option value="ara">Almeida Revista e Atualizada</option>
+                    <option value="acf">Almeida Corrigida Fiel</option>
+                    <option value="nvt">Nova Versão Transformadora</option>
+                    <!-- Adicione mais opções de tradução conforme necessário -->
+                </select>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="messages" id="messages">
+            {% if resposta %}
+            <div class="message user-message">
+                <strong>{{ request.form.get('assunto') }}</strong>
+            </div>
+            <div class="message bot-message">
+                <strong>Resumo:</strong>
+                <div class="formatted-response">{{ resposta }}</div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

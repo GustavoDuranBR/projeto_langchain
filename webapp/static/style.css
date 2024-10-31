@@ -1,0 +1,153 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5; /* Cor de fundo */
+}
+
+/* Container principal */
+.container {
+    max-width: 1000px; /* Largura máxima do chat */
+    margin: auto;
+    border-radius: 8px; /* Arredondamento suave */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* Fundo do chat */
+    padding: 20px;
+    margin-top: 20px; /* Espaço acima do container */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #286cea; /* Cor do cabeçalho */
+    color: white;
+    padding: 15px;
+    border-radius: 8px; /* Arredondamento suave */
+    text-align: center;
+}
+
+/* Estilo das mensagens */
+.messages {
+    flex: 1; /* Permite que essa seção ocupe o espaço disponível */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 100%; /* Permite que mensagens se ajustem ao container */
+    word-wrap: break-word; /* Quebra de linha para palavras longas */
+    overflow-wrap: break-word; /* Para suporte em navegadores */
+    font-size: 1.1em; /* Aumenta o tamanho da fonte das mensagens */
+}
+
+/* Mensagem do usuário */
+.user-message {
+    background-color: #286cea; /* Cor da mensagem do usuário */
+}
+
+/* Mensagem do bot */
+.bot-message {
+    background-color: #f1f0f0; /* Cor da mensagem do bot */
+}
+
+/* Resposta formatada */
+.formatted-response {
+    white-space: pre-wrap; /* Preserva espaços e quebras de linha */
+    word-wrap: break-word; /* Quebra de linha para palavras longas */
+    margin-bottom: 15px; /* Melhora o espaçamento entre parágrafos */
+}
+
+/* Rodapé */
+.footer {
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Input do rodapé */
+.footer input[type="text"] {
+    flex: 2; /* Aumenta a largura do campo de entrada */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilização do campo de seleção */
+.footer select {
+    flex: 2; /* Permite que o campo de seleção ocupe espaço igual ao input */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em; /* Ajusta o tamanho da fonte no campo de seleção */
+}
+
+/* Botão do rodapé */
+.footer button {
+    background-color: #286cea; /* Cor do botão */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efeito de hover no botão */
+.footer button:hover {
+    background-color: #3a7fc5; /* Cor do botão ao passar o mouse */
+}
+
+/* Menu de navegação */
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #286cea; /* Cor do menu */
+    padding: 10px;
+    border-radius: 8px; /* Arredondamento suave */
+    margin-bottom: 10px; /* Espaço abaixo do menu */
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Ajusta a largura do container em dispositivos móveis */
+        padding: 10px; /* Ajusta o padding do container */
+    }
+
+    .header, .footer {
+        padding: 10px; /* Ajusta o padding em dispositivos móveis */
+    }
+
+    .message {
+        max-width: 95%; /* Permite mensagens mais largas em dispositivos móveis */
+    }
+
+    .footer input[type="text"],
+    .footer select {
+        flex: 1; /* Ajusta o tamanho para ocupar mais espaço em dispositivos móveis */
+        font-size: 0.9em; /* Reduz o tamanho da fonte em dispositivos móveis */
+    }
+
+    .footer button {
+        font-size: 0.9em; /* Reduz o tamanho da fonte do botão em dispositivos móveis */
+    }
+
+    .formatted-response {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte da resposta formatada */
+    }
+}
